@@ -38,4 +38,10 @@ public class CountryController {
 		
 		return "redirect:/";
 	}
+	
+	@GetMapping("/findOne")
+	@ResponseBody
+	public String findOneCountry(Integer id) {
+		return countryRepo.findOne(id);
+	}
 }
