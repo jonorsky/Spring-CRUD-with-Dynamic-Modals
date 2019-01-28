@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="card">
+		
+		<div class="card-block">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th> ID </th>
+						<th> Country </th>
+						<th> Capital </th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="country :${data.content}">
+						<td th:text="${country:id}"></td>
+						<td th:text="${country:name}"></td>
+						<td th:text="${country:capital}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		</div> 
+	</div>
+
+</body>
+</html>
