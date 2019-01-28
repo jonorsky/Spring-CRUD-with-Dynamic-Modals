@@ -2,8 +2,10 @@ package com.frostflux.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.frostflux.entities.Country;
 import com.frostflux.repositories.CountryRepository;
 
 import org.springframework.ui.Model;
@@ -23,7 +25,10 @@ public class CountryController {
 		return "index";
 	}
 	
+	@PostMapping("/save")
 	public String save(Country c) {
 		countryRepo.save(c);
+		
+		return "redirect:/";
 	}
 }
