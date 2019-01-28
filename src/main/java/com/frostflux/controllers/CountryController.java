@@ -1,16 +1,18 @@
 package com.frostflux.controllers;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.frostflux.entities.Country;
 import com.frostflux.repositories.CountryRepository;
-
-import org.springframework.ui.Model;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 
 @Controller
 public class CountryController {
@@ -41,7 +43,7 @@ public class CountryController {
 	
 	@GetMapping("/findOne")
 	@ResponseBody
-	public String findOneCountry(Integer id) {
-		return countryRepo.findOne(id);
+	public Optional<Country> findOneCountry(Integer id) {
+		return countryRepo.findById(id);
 	}
 }
