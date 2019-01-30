@@ -30,9 +30,14 @@ $(document).ready(function() {
 	
 	$('.table .delBtn').on('click',function(event){
 		event.preventDefault();
+		
+		
 		var href = $(this).attr('href');
+		
+
 		$('#myModal #delref').attr('href',href);
 		$('#myModal').modal();
+		
 	});
 	
 	
