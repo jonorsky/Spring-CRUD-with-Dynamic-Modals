@@ -24,6 +24,7 @@ public class CountryController {
 	public String showPage(Model model,@RequestParam(defaultValue="0") int page) {
 		model.addAttribute("data",countryRepo.
 				findAll(PageRequest.of(page,4)));
+		model.addAttribute("currentPage",page);
 		return "index";
 	}
 	
