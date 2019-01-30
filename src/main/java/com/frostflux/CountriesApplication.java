@@ -21,7 +21,14 @@ public class CountriesApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception{
 		countryRepository.save(new Country("Earth","World"));
 		countryRepository.save(new Country("China","Peking"));
-		
+		countryRepository.save(new Country("China","Peking"));
+		countryRepository.save(new Country("China","Peking"));
+		countryRepository.save(new Country("China","Peking"));
+		countryRepository.save(new Country("China","Peking"));
+		countryRepository.save(new Country("China","Peking"));
+		countryRepository.save(new Country("China","Peking"));
+		countryRepository.save(new Country("China","Peking"));
+		countryRepository.save(new Country("China","Peking"));
 	}
 
 }
